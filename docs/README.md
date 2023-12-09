@@ -3,8 +3,8 @@
 - [x] 로또 구입 금액을 입력한다. `InputView>requestPurchaseMoney`
   - [x] 빈값에 대한 예외 처리를 한다. `InputView>validateInputEmpty`
   - [x] 숫자인지에 대한 예외 처리를 한다. `InputView>validateNumeric`
-  - [ ] 금액은 LottoMoney 클래스에 저장한다.
-    - [ ] 금액이 1,000 단위인지에 대한 예외처리를 한다.
+  - [x] 금액은 LottoMoney 클래스에 저장한다. `LottoMoney`
+    - [x] 금액이 1,000 단위인지에 대한 예외처리를 한다. `LottoMoney>validateUnitFor1000`
 - [ ] 구입한 금액만큼 로또를 생성한다.
 - [ ] 생성한 로또 번호를 출력한다.
 - [ ] 당첨 번호 6개를 입력받는다.

@@ -1,5 +1,6 @@
 package lotto.controller;
 
+import lotto.model.LottoMoney;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
@@ -14,16 +15,16 @@ public class LottoController {
     public void start(){ // start() 만 public 으로 열어둠.
         getPurchaseMoney();
 
+
     }
 
-    private void getPurchaseMoney(){
+    private LottoMoney getPurchaseMoney(){
         try{
             int money = inputView.requestPurchaseMoney();
-            // todo 받은돈 로또머니에 저장.
-
+            return new LottoMoney(money);
         }catch (RuntimeException e){
             outputView.printErrorMessage(e.getMessage());
-            getPurchaseMoney();
+            return getPurchaseMoney();
         }
 
     }
