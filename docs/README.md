@@ -8,7 +8,8 @@
 - [x] 구입한 금액만큼 로또를 생성한다. `Lottos`
   - [x] 로또 번호 중복값에 대한 예외 처리를 한다. `Lotto>validateDuplicateNumber`
   - [x] 로또 번호 개수에 대한 예외 처리를 한다. `Lotto>validate`
-- [ ] 생성한 로또 번호를 출력한다.
+- [x] 구입한 로또 개수를 출력한다.  `OutPutView>printLottoPurchaseCount`
+- [X] 생성한 로또 번호를 출력한다. `OutPutView>printLottosNumbers`
 - [ ] 당첨 번호 6개를 입력받는다.
   - [ ] 입력에 대한 예외 처리를 한다.
 - [ ] 보너스 번호 한개를 입력한다.
