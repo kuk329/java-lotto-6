@@ -17,6 +17,8 @@ public class LottoController {
     public void start(){
         LottoMoney lottoMoney = getPurchaseMoney();
         Lottos lottos = createLottos(lottoMoney.getCount());
+        printLottos(lottos);
+
 
 
     }
@@ -38,6 +40,12 @@ public class LottoController {
             outputView.printErrorMessage(e.getMessage());
             return createLottos(count);
         }
+    }
+
+    public void printLottos(Lottos lottos){
+        outputView.printLottoPurchaseCount(lottos.getLottos().size());
+        outputView.printLottosNumbers(lottos);
+
     }
 
 
