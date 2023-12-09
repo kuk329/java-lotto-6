@@ -1,6 +1,8 @@
 package lotto.controller;
 
+import java.util.List;
 import lotto.model.LottoMoney;
+import lotto.model.Lottos;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
@@ -14,6 +16,7 @@ public class LottoController {
     }
     public void start(){
         LottoMoney lottoMoney = getPurchaseMoney();
+        Lottos lottos = createLottos(lottoMoney.getCount());
 
 
     }
@@ -26,6 +29,17 @@ public class LottoController {
             outputView.printErrorMessage(e.getMessage());
             return getPurchaseMoney();
         }
-
     }
+
+    public Lottos createLottos(int count){
+        try{
+            return new Lottos(count);
+        }catch (RuntimeException e){
+            outputView.printErrorMessage(e.getMessage());
+            return createLottos(count);
+        }
+    }
+
+
+
 }
