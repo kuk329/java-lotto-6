@@ -43,6 +43,17 @@ class LottoMoneyTest {
 
     }
 
+    @DisplayName("로또 구입 금액을 넣었을때 로또를 구입 개수가 제대로 나오는지 확인")
+    @Test
+    void validateLottoCount(){
+        int money = 8000;
+        int count = 8000/1000;
+
+        LottoMoney lottoMoney = new LottoMoney(money);
+
+        assertThat(lottoMoney.getCount()).isEqualTo(count);
+
+    }
 
 
 }
