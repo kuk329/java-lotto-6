@@ -12,8 +12,8 @@ public class LottoController {
         this.inputView = new InputView();
         this.outputView = new OutputView();
     }
-    public void start(){ // start() 만 public 으로 열어둠.
-        getPurchaseMoney();
+    public void start(){
+        LottoMoney lottoMoney = getPurchaseMoney();
 
 
     }
