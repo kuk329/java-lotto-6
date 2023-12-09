@@ -21,7 +21,7 @@ public class Lottos {
         }
     }
 
-    public List<Integer> createNumbers(){
+    private List<Integer> createNumbers(){
         return Randoms.pickUniqueNumbersInRange(MIN_NUMBER,MAX_NUMBER,LOTTO_COUNT);
     }
 

@@ -31,12 +31,12 @@ public class LottoController {
         }
     }
 
-    public Lottos createLottos(int amount){
+    public Lottos createLottos(int count){
         try{
-            return new Lottos(amount);
+            return new Lottos(count);
         }catch (RuntimeException e){
             outputView.printErrorMessage(e.getMessage());
-            return createLottos(amount);
+            return createLottos(count);
         }
     }
 
