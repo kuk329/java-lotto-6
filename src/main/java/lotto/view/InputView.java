@@ -2,7 +2,6 @@ package lotto.view;
 
 
 import camp.nextstep.edu.missionutils.Console;
-import java.awt.font.NumericShaper;
 
 public class InputView {
 
