@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Lottos {
     private final int MIN_NUMBER = 1;
-    private final int MAX_NUMBER = 1;
+    private final int MAX_NUMBER = 45;
     private final int LOTTO_COUNT = 6;
     private final ArrayList<Lotto> lottos;
 

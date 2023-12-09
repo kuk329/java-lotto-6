@@ -3,12 +3,12 @@ package lotto.model;
 public class LottoMoney {
     private static final int UNIT=1000;
     private final int money;
-    private final int count;
+
 
     public LottoMoney(int money) {
         validateUnitFor1000(money);
         this.money = money;
-        this.count = money/1000;
+
     }
 
     public void validateUnitFor1000(int money){
@@ -18,7 +18,7 @@ public class LottoMoney {
     }
 
     public int getCount() {
-        return count;
+        return money/1000;
     }
 
     public int getMoney(){
