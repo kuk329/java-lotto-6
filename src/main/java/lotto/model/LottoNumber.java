@@ -19,4 +19,9 @@ public class LottoNumber {
     public int getNumber() {
         return number;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(number);
+    }
 }

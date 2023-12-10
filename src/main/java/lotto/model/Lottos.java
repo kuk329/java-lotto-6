@@ -28,4 +28,11 @@ public class Lottos {
     public ArrayList<Lotto> getLottos() {
         return lottos;
     }
+
+//    @Override
+//    public String toString() {
+//        for (Lotto lotto : lottos) {
+//            System.out.printf(lotto.getNumbers().toString());
+//        }
+//    }
 }

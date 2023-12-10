@@ -19,14 +19,8 @@ public class LottoController {
         LottoMoney lottoMoney = getPurchaseMoney();
         Lottos lottos = createLottos(lottoMoney.getCount());
         printLottos(lottos);
-        List<Integer> numbers = getWinningNumbers();
-        createWinningNumbers(numbers);
+        createWinningNumbers();
 
-
-    }
-
-    private void createWinningNumbers(List<Integer> numbers) {
-        new WinningNumbers(numbers);
 
     }
 
@@ -55,12 +49,14 @@ public class LottoController {
 
     }
 
-    private List<Integer> getWinningNumbers(){
+    private void createWinningNumbers(){
         try{
-            return inputView.requestWinningNumbers();
+            List<Integer> integers = inputView.requestWinningNumbers();
+            new WinningNumbers(integers);
+
         }catch (RuntimeException e){
             outputView.printErrorMessage(e.getMessage());
-            return getWinningNumbers();
+           createWinningNumbers();
         }
     }
 
