@@ -45,10 +45,17 @@ public class InputView {
 
     }
 
-    public void requestBonusNumber(){
+    public Integer requestBonusNumber(){
         String message = "보너스 번호를 입력해 주세요.";
         printMessage(message);
+        return getBonusNumber();
+    }
 
+    private Integer getBonusNumber() {
+        String input = Console.readLine();
+        validateInputEmpty(input);
+        validateNumeric(input);
+        return Integer.parseInt(input);
     }
 
     private void printMessage(String message){
