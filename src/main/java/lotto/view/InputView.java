@@ -2,6 +2,8 @@ package lotto.view;
 
 
 import camp.nextstep.edu.missionutils.Console;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InputView {
 
@@ -20,6 +22,34 @@ public class InputView {
         return Integer.parseInt(input);
     }
 
+    public List<Integer> requestWinningNumbers(){
+        String message = "당첨 번호를 입력해 주세요.";
+        printMessage("");
+        printMessage(message);
+        return getWinningNumbers();
+    }
+
+    public List<Integer> getWinningNumbers(){
+        String input = Console.readLine();
+        validateInputEmpty(input);
+        return validateInputFormat(input);
+
+    }
+
+    public List<Integer> changeStringToArray(String[] split){
+        ArrayList<Integer> list  = new ArrayList<>();
+        for (String str : split) {
+            list.add(Integer.parseInt(str));
+        }
+        return list;
+
+    }
+
+    public void requestBonusNumber(){
+        String message = "보너스 번호를 입력해 주세요.";
+        printMessage(message);
+
+    }
 
     private void printMessage(String message){
         System.out.println(message);
@@ -37,6 +67,16 @@ public class InputView {
         }catch (NumberFormatException error){
             throw new NumberFormatException("숫자를 입력해 주세요.");
         }
-
     }
+
+    private List<Integer> validateInputFormat(String input){
+        try{
+            String[] split = input.split(",");
+            return changeStringToArray(split);
+        }catch (IllegalArgumentException e){
+            throw new NumberFormatException(",구분자를 사용해 당첨 번호를 입력해 주세요.");
+
+        }
+    }
+
 }

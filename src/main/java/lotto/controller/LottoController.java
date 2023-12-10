@@ -18,6 +18,7 @@ public class LottoController {
         LottoMoney lottoMoney = getPurchaseMoney();
         Lottos lottos = createLottos(lottoMoney.getCount());
         printLottos(lottos);
+        getWinningNumbers();
 
 
 
@@ -33,7 +34,7 @@ public class LottoController {
         }
     }
 
-    public Lottos createLottos(int count){
+    private Lottos createLottos(int count){
         try{
             return new Lottos(count);
         }catch (RuntimeException e){
@@ -42,11 +43,25 @@ public class LottoController {
         }
     }
 
-    public void printLottos(Lottos lottos){
+    private void printLottos(Lottos lottos){
         outputView.printLottoPurchaseCount(lottos.getLottos().size());
         outputView.printLottosNumbers(lottos);
 
     }
+
+    private void getWinningNumbers(){
+        try{
+            List<Integer> integers = inputView.requestWinningNumbers();
+            System.out.println(integers);
+        }catch (RuntimeException e){
+            outputView.printErrorMessage(e.getMessage());
+            getWinningNumbers();
+        }
+    }
+
+
+
+
 
 
 
