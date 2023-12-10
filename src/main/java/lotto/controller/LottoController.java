@@ -3,6 +3,7 @@ package lotto.controller;
 import java.util.List;
 import lotto.model.LottoMoney;
 import lotto.model.Lottos;
+import lotto.model.WinningNumbers;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
@@ -18,9 +19,14 @@ public class LottoController {
         LottoMoney lottoMoney = getPurchaseMoney();
         Lottos lottos = createLottos(lottoMoney.getCount());
         printLottos(lottos);
-        getWinningNumbers();
+        List<Integer> numbers = getWinningNumbers();
+        createWinningNumbers(numbers);
 
 
+    }
+
+    private void createWinningNumbers(List<Integer> numbers) {
+        new WinningNumbers(numbers);
 
     }
 
@@ -49,13 +55,12 @@ public class LottoController {
 
     }
 
-    private void getWinningNumbers(){
+    private List<Integer> getWinningNumbers(){
         try{
-            List<Integer> integers = inputView.requestWinningNumbers();
-            System.out.println(integers);
+            return inputView.requestWinningNumbers();
         }catch (RuntimeException e){
             outputView.printErrorMessage(e.getMessage());
-            getWinningNumbers();
+            return getWinningNumbers();
         }
     }
 
